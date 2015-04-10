@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoveNinja", "LoveNinja\LoveNinja.csproj", "{EE8657F2-EBB4-4C95-9B6C-D9973CA747F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "UnitTestProject1\Tests.csproj", "{5E5339EB-DB04-43F7-8A6F-E0185C4757F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoveNinjaConsole", "ConsoleApplication1\LoveNinjaConsole.csproj", "{021BE90B-CF81-4547-9877-142C69E32848}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE8657F2-EBB4-4C95-9B6C-D9973CA747F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8657F2-EBB4-4C95-9B6C-D9973CA747F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8657F2-EBB4-4C95-9B6C-D9973CA747F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8657F2-EBB4-4C95-9B6C-D9973CA747F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E5339EB-DB04-43F7-8A6F-E0185C4757F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5339EB-DB04-43F7-8A6F-E0185C4757F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5339EB-DB04-43F7-8A6F-E0185C4757F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5339EB-DB04-43F7-8A6F-E0185C4757F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{021BE90B-CF81-4547-9877-142C69E32848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{021BE90B-CF81-4547-9877-142C69E32848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{021BE90B-CF81-4547-9877-142C69E32848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{021BE90B-CF81-4547-9877-142C69E32848}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
