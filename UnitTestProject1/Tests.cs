@@ -22,7 +22,17 @@ namespace UnitTests
         public void GetGuitarNote()
         {
             var note = LoveNinja.Guitar.Fretboard.AtPosition(6, 7);
-            Console.WriteLine(note.name);
+            var control = "B";
+            Assert.AreEqual(control, note.name);
         }
+        [TestMethod]
+        public void GetProgression()
+        {
+            var progression = LoveNinja.Music.Chords.GetProgression("C", LoveNinja.Music.Chords.MajorChords, LoveNinja.Music.PopularProgressions[0]);
+            var result = string.Join(" ", progression.Select(a => a.name + a.chordType));
+            var control = "CMajor GMajor AMinor FMajor";
+            Assert.AreEqual(result, control);
+        }
+
     }
 }

@@ -105,8 +105,29 @@ namespace LoveNinja
             public string chordType { get; set; }
             public static NoteInfo[] notes { get; set; }
         }
+        public static List<List<int>> PopularProgressions = new List<List<int>>(){
+            new List<int>(){1,5,6,4},
+            new List<int>(){1,5,6,3},
+            new List<int>(){6,5,4,5},
+            new List<int>(){1,6,4,5},
+            new List<int>(){1,4,6,5},
+            new List<int>(){1,5,4,5},
+        };
         public static class Chords
         {
+            public static List<ChordInfo> GetRandomProgression(string note, List<ChordInfo> chords)
+            {
+                var rnd = new Random();
+                var next = rnd.Next(PopularProgressions.Count);
+                return GetProgression(note, chords, PopularProgressions[next]);
+            }
+            public static List<ChordInfo> GetProgression(string note, List<ChordInfo> chords, List<int> progression)
+            {
+                var currentChords = GetChords(note, chords);
+                List<ChordInfo> progressionChords = new List<ChordInfo>();
+                progression.ForEach(a => progressionChords.Add(currentChords[a - 1]));
+                return progressionChords;
+            }
             public static List<ChordInfo> GetChords(string note, List<ChordInfo> chords)
             {
                 note = note.ToUpper();
