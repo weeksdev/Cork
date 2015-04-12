@@ -1,6 +1,13 @@
 # Cork
 >Cork, a song writing/music library and tablature creator
+
 >A class library and test suite for basic music information and tablature.
+
+Benefits:
+
+1. Create tabs fast and easy!
+2. Thourough library of scales and keys
+
 
 ###Includes the following:
 
