@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoveNinja
+namespace Cork
 {
     public static class Music
     {
@@ -77,8 +77,12 @@ namespace LoveNinja
             //A minor pentatonic blues scale (no sharped 5) is: R, 1 1/2, W, W, 1 1/2, W
             public static Scales 
                 Major { get { return new Scales(new int[] { 2, 2, 1, 2, 2, 2, 1 }); } }
+            public static Scales
+                MajorPentatonic { get { return new Scales(new int[] { 2, 2, 3, 2, 3 }); } }
             public static Scales 
                 NaturalMinor { get { return new Scales(new int[] { 2, 1, 2, 2, 1, 2, 2 }); } }
+            public static Scales
+                MinorPentatonic { get { return new Scales(new int[] { 3, 2, 2, 3 }); } }
             public static Scales
                 HarmonicMinor { get { return new Scales(new int[] { 2, 1, 2, 2, 1, 3, 2 }); } }
             public static Scales
@@ -88,7 +92,9 @@ namespace LoveNinja
             public static Scales
                 MixolydianModel { get { return new Scales(new int[] { 2, 2, 1, 2, 2, 1, 2 }); } }
             public static Scales
-                PentatonicBlues { get { return new Scales(new int[] { 3, 2, 1, 1, 3, 2 }); } }
+                MinorPentatonicBlues { get { return new Scales(new int[] { 3, 2, 1, 1, 3, 2 }); } }
+            public static Scales
+                MajorPentatonicBlues { get { return new Scales(new int[] { 2, 1, 1, 3, 2, 3 }); } }
         }
         public static List<NoteInfo> GetScale(string root, Scales scale)
         {
@@ -115,9 +121,9 @@ namespace LoveNinja
         };
         public static class Chords
         {
+            private static Random rnd = new Random(1337);
             public static List<ChordInfo> GetRandomProgression(string note, List<ChordInfo> chords)
             {
-                var rnd = new Random();
                 var next = rnd.Next(PopularProgressions.Count);
                 return GetProgression(note, chords, PopularProgressions[next]);
             }
@@ -131,7 +137,7 @@ namespace LoveNinja
             public static List<ChordInfo> GetChords(string note, List<ChordInfo> chords)
             {
                 note = note.ToUpper();
-                var scale = LoveNinja.Music.GetScale(note, Scales.Major);
+                var scale = Cork.Music.GetScale(note, Scales.Major);
                 for (var i = 0; i < 7; i++)
                 {
                     chords[i].name = scale[i].name;

@@ -7,8 +7,8 @@
     <ProjectGuid>{021BE90B-CF81-4547-9877-142C69E32848}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>CorkConsole</RootNamespace>
+    <AssemblyName>CorkConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -48,9 +48,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoveNinja\LoveNinja.csproj">
+    <ProjectReference Include="..\Cork\Cork.csproj">
       <Project>{ee8657f2-ebb4-4c95-9b6c-d9973ca747f1}</Project>
-      <Name>LoveNinja</Name>
+      <Name>Cork</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

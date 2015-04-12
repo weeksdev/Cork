@@ -7,7 +7,7 @@
     <ProjectGuid>{EE8657F2-EBB4-4C95-9B6C-D9973CA747F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LoveNinja</RootNamespace>
+    <RootNamespace>Cork</RootNamespace>
     <AssemblyName>LoveNinja</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,6 +42,7 @@
     <Compile Include="Guitar.cs" />
     <Compile Include="Music.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tablature.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

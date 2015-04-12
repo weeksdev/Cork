@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoveNinja\LoveNinja.csproj">
+    <ProjectReference Include="..\Cork\Cork.csproj">
       <Project>{ee8657f2-ebb4-4c95-9b6c-d9973ca747f1}</Project>
-      <Name>LoveNinja</Name>
+      <Name>Cork</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
