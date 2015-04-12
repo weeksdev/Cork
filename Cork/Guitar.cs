@@ -6,22 +6,45 @@ using System.Threading.Tasks;
 
 namespace Cork
 {
+    /// <summary>
+    /// Class containing guitar specific objects, including fretboard information and guitar chord information.
+    /// </summary>
     public static class Guitar
     {
+        /// <summary>
+        /// A class inherited from Music.ChordInfo that can be used to create a specific chord type with the chord variations that can be played on guitar
+        /// </summary>
         public class GuitarChordInfo : Music.ChordInfo
         {
+            /// <summary>
+            /// Constructor for the guitar chord info
+            /// </summary>
+            /// <param name="chordType">The type of chord (major/minor/etc)</param>
+            /// <param name="name">the name of the note the chord is for, for instance, an AMajor chord would be "A"</param>
+            /// <param name="chordVariations">a list of variations of the chord as played on guitar</param>
             public GuitarChordInfo(string chordType, string name, List<List<GuitarNoteInfo>> chordVariations)
             {
                 this.chordType = chordType;
                 this.name = name;
                 this.chordVariations = chordVariations;
             }
+            /// <summary>
+            /// the variations of chord phrasings for guitar
+            /// </summary>
             public List<List<GuitarNoteInfo>> chordVariations { get; set; }
+            /// <summary>
+            /// the basic open chord position
+            /// </summary>
             public List<GuitarNoteInfo> basicChord { get; set; }
         }
         public static class GuitarChords
         {
-
+            /// <summary>
+            /// obtain a chord phrasing based on the note (c, etc.) and chord type (major, etc.)
+            /// </summary>
+            /// <param name="name">note the chord corresponds to</param>
+            /// <param name="chordType">the type of chord to obtain (major, minor, etc.)</param>
+            /// <returns>collection of guitar notes that together, make up the chord phrasing</returns>
             public static List<GuitarNoteInfo> GetChord(string name, string chordType)
             {
                 switch (chordType.ToLower())
@@ -36,6 +59,11 @@ namespace Cork
                         throw new NotImplementedException("the chord type you specified isn't implemented.");
                 }
             }
+            /// <summary>
+            /// obtain a chord phrasing for natural minor key
+            /// </summary>
+            /// <param name="name">note the chord corresponds to</param>
+            /// <returns>collection of guitar notes that together, make up the chord phrasing</returns
             public static List<GuitarNoteInfo> GetMinorChord(string name)
             {
                 switch (name.ToUpper())
@@ -70,6 +98,11 @@ namespace Cork
                         throw new NotImplementedException("the name you entered didn't correspond to anything.");
                 }
             }
+            /// <summary>
+            /// obtain a chord phrasing for major key
+            /// </summary>
+            /// <param name="name">note the chord corresponds to</param>
+            /// <returns>collection of guitar notes that together, make up the chord phrasing</returns
             public static List<GuitarNoteInfo> GetMajorChord(string name)
             {
                 switch (name.ToUpper())
@@ -104,6 +137,9 @@ namespace Cork
                         throw new NotImplementedException("the name you entered didn't correspond to anything.");
                 }
             }
+            /// <summary>
+            /// basic minor chords
+            /// </summary>
             public static class Minor
             {
                 public static List<GuitarNoteInfo> C = new List<GuitarNoteInfo>()
@@ -215,6 +251,9 @@ namespace Cork
                     null
                 };
             }
+            /// <summary>
+            /// basic major chords
+            /// </summary>
             public static class Major
             {
                 public static List<GuitarNoteInfo> C = new List<GuitarNoteInfo>()
@@ -328,8 +367,18 @@ namespace Cork
             }
             
         }
+        /// <summary>
+        /// note information for a specific guitar fret/string position (based in standard tuning EADGBE, unless altered)
+        /// </summary>
         public class GuitarNoteInfo: Music.NoteInfo
         {
+            /// <summary>
+            /// constructor to create a guitar note info
+            /// </summary>
+            /// <param name="fretPosition">the fret the note corresponds to</param>
+            /// <param name="stringPosition">the string position the note corresponds to</param>
+            /// <param name="name">the name of the note (sharp name)</param>
+            /// <param name="alternateName">the alternate name of the note (flat name)</param>
             public GuitarNoteInfo(int fretPosition, int stringPosition, string name, string alternateName)
             {
                 this.alternateName = alternateName;
@@ -337,7 +386,13 @@ namespace Cork
                 this.stringPosition = stringPosition;
                 this.name = name;
             }
+            /// <summary>
+            /// string position
+            /// </summary>
             public int stringPosition { get; set; }
+            /// <summary>
+            /// fret position
+            /// </summary>
             public int fretPosition { get; set; }
         }
         public static List<GuitarNoteInfo> Strings = new List<GuitarNoteInfo>(){
