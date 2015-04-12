@@ -23,6 +23,12 @@
 
 1. ability to import a string/file of a tablature and extract key information
 2. suggestion engine for chord progressions and licks that will go well with a set of chords or notes
+3. i'm going to be using these classes to create a web based guitar song writing toolkit.  It will include:
+  1. suggestions for chord progressions and licks (displayed as tablature)
+  2. a way to generate tablature on the fly
+  3. ability to upload tablature for analysis
+  4. a way to tie lyrics to chord progressions / tabs
+4. Lyric class to add lyrics and analyze structure, etc. 
 
 ###How to use the tablature engine
 Using the tablature class object is pretty simple here is a basic example:
@@ -89,3 +95,28 @@ Console.WriteLine("Chorus: " + string.Join(" ", chorus.Select(a => a.name + a.ch
 Console.WriteLine("Bridge: " + string.Join(" ", bridge.Select(a => a.name + a.chordType)));
 Console.ReadKey();
 ```
+###The Guitar Class
+The guitar class is composed of the following pieces:
+
+1. `GuitarChordInfo`
+  1. a collection of `GuitarNoteInfo` that is composed of 6 items (each string).  Please use `null` for a string that isn't played.
+  2. Example:
+  
+  ```
+  public static List<GuitarNoteInfo> D = new List<GuitarNoteInfo>()
+  {
+    Fretboard.AtPosition(1, 2),
+    Fretboard.AtPosition(2, 3),
+    Fretboard.AtPosition(3, 2),
+    Fretboard.AtPosition(4, 0),
+    null,
+    null
+  };
+  ```
+  
+2. `GuitarChords`
+3. `GuitarNoteInfo`
+  1. note information for a guitar at a specific string and fret position, `inherits` from `NoteInfo` 
+4. `Fretboard`
+  1. contains method `AtPosition` to obtain `GuitarNoteInfo` for a specific position
+  2. the default guitar tuning is EADGBE however, this can be ammended by adjusting the `Strings` class.  However, this will have no impact on the chords they would continue to be EADGBE.  You would need to ammend the Major/Minor chords too if you want to use those chords or simply generate your own chords that you are going to use.
